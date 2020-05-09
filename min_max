@@ -1,0 +1,22 @@
+#!/bin/python3
+# Problem:Find the minimum and maximum values that can be calculated by summing exactly four of the five integers.
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the miniMaxSum function below.
+def miniMaxSum(arr):
+    arr.sort()
+    res=[]
+    size=len(arr)
+    min1=sum(arr[0:4])
+    max1=sum(arr[size-4:size])
+    print(f"{min1} {max1}")
+    
+    
+if __name__ == '__main__':
+    arr = list(map(int, input().rstrip().split()))
+
+    miniMaxSum(arr)
