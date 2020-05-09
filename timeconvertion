@@ -1,0 +1,33 @@
+#!/bin/python3
+#Converting time from 12hr to 24hr format
+import os
+import sys
+
+#function to conver time
+def timeConversion(s):
+    end=len(s)-2
+    temp=s[len(s)-2:len(s)]
+    if(temp=='PM'):
+        if s[0:2]=='12':
+            return s[:end]
+        else:
+            val=int(s[:2])+12
+            str1=str(val)+s[2:end]
+            return str1
+    elif temp=='AM':
+        if s[0:2]=='12':
+            str2='00'+s[2:end]
+            return str2
+        else:
+            return s[:end]
+
+if __name__ == '__main__':
+    f = open(os.environ['OUTPUT_PATH'], 'w')
+
+    s = input()
+
+    result = timeConversion(s)
+
+    f.write(result + '\n')
+
+    f.close()
