@@ -1,0 +1,20 @@
+#!/bin/python3
+#Calculate and print the sum of the elements in an array, keeping in mind that some of those integers may be quite large.
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the aVeryBigSum function below.
+def aVeryBigSum(ar):
+    res=0 
+    for i in ar: 
+        res+=i
+    return res
+if __name__ == '__main__':
+    size=int(input())
+    arr=list(map(int,input().rstrip().split()))
+    res=aVeryBigSum(arr)
+    print(res)
